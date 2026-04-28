@@ -4,7 +4,7 @@
 <t t-name="po_translator.MainAction">
   <!--
     Wrapper takes the full available height of Odoo's action area.
-    The iframe fills it entirely so the PO Translator feels native.
+    The iframe fills it entirely so the PO Smart Translator feels native.
   -->
   <div class="o_po_translator_action" style="
       display: flex;
@@ -27,7 +27,7 @@
              style="animation: po-spin 0.8s linear infinite;">
           <path d="M21 12a9 9 0 11-6.219-8.56"/>
         </svg>
-        Loading PO Translator…
+        Loading PO Smart Translator…
         <style>
           @keyframes po-spin { to { transform: rotate(360deg); } }
         </style>
@@ -48,7 +48,7 @@
           <line x1="12" y1="16" x2="12.01" y2="16"/>
         </svg>
         <div style="font-size:16px;font-weight:600;color:#2d3436;">
-          PO Translator Unreachable
+          PO Smart Translator Unreachable
         </div>
         <div style="font-size:13px;color:#636e72;max-width:480px;text-align:center;line-height:1.6;">
           <t t-esc="state.error"/>
@@ -58,7 +58,7 @@
           <t t-esc="state.url"/>
         </div>
         <div style="font-size:12px;color:#b2bec3;text-align:center;line-height:1.8;">
-          Run <strong>./start.sh</strong> in the PO_Editer project folder,
+          Run <strong>./start.sh</strong> in the POST project folder,
           then refresh this page.<br/>
           To change the URL: Settings → Technical → System Parameters →
           <em>po_translator.app_url</em>
@@ -79,7 +79,7 @@
           background: #fff;
         "
         allow="clipboard-read; clipboard-write"
-        title="PO Translator"
+        title="PO Smart Translator"
       />
     </t>
 

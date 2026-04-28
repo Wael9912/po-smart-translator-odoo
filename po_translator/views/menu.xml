@@ -4,7 +4,7 @@
     <!-- ── Client Action ─────────────────────────────────── -->
     <!-- Renders the OWL PoTranslatorAction component        -->
     <record id="action_po_translator_main" model="ir.actions.client">
-        <field name="name">PO Translator</field>
+        <field name="name">PO Smart Translator</field>
         <field name="tag">po_translator.main</field>
         <field name="target">current</field>
     </record>
@@ -12,7 +12,7 @@
     <!-- ── Root menu (shows in App Switcher + top nav) ───── -->
     <menuitem
         id="menu_po_translator_root"
-        name="PO Translator"
+        name="PO Smart Translator"
         action="action_po_translator_main"
         sequence="100"
         web_icon="po_translator,static/description/icon.png"

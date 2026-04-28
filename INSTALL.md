@@ -1,4 +1,4 @@
-# PO Translator — Odoo 18 Module Installation
+# PO Smart Translator — Odoo 18 Module Installation
 
 ## 1. Copy the module into your Odoo addons path
 
@@ -51,13 +51,13 @@ docker compose restart odoo
 Then in Odoo:
 1. Enable **Developer Mode** → Settings → Activate the developer mode
 2. Go to **Apps** → click **Update Apps List**
-3. Search for **"PO Translator"** → click **Install**
+3. Search for **"PO Smart Translator"** → click **Install**
 
 ---
 
 ## 4. Configure the Flask app URL
 
-The module needs to know where to find the running PO Translator Flask server.
+The module needs to know where to find the running PO Smart Translator Flask server.
 
 Go to:  **Settings → Technical → Parameters → System Parameters**
 
@@ -89,7 +89,7 @@ From the `PO_Editer` project folder on your Mac:
 
 ## 6. Open in Odoo
 
-Click the **PO Translator** icon in the Odoo app switcher (the grid icon, top-left).
+Click the **PO Smart Translator** icon in the Odoo app switcher (the grid icon, top-left).
 The full editor will load inside Odoo's shell.
 
 ---
@@ -99,7 +99,7 @@ The full editor will load inside Odoo's shell.
 | Symptom | Fix |
 |---|---|
 | App not visible after install | Update Apps List, hard-refresh browser |
-| "PO Translator Unreachable" error | Run `./start.sh`, check `po_translator.app_url` |
+| "PO Smart Translator Unreachable" error | Run `./start.sh`, check `po_translator.app_url` |
 | Blank white page | Check browser console for CSP/CORS errors (see below) |
 | 404 on `/po_translator/config` | Restart Odoo after installing the module |
 

@@ -1,10 +1,10 @@
 {
-    'name': 'PO Translator',
+    'name': 'PO Smart Translator',
     'version': '18.0.1.0.0',
     'category': 'Localization',
     'summary': 'AI-powered PO file translation editor with multi-source suggestions',
     'description': """
-PO Translator
+PO Smart Translator
 =============
 Full-featured .po file editor embedded inside Odoo.
 
