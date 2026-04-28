@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Default URL the browser uses to reach the PO Translator Flask app.
+        Change this in Odoo Settings → Technical → System Parameters
+        key: po_translator.app_url
+
+        Common values:
+          http://localhost:5100          ← Mac / Linux host (browser-side)
+          http://host.docker.internal:5100  ← Docker Desktop on Mac/Windows
+    -->
+    <record id="config_param_po_translator_url" model="ir.config_parameter">
+        <field name="key">po_translator.app_url</field>
+        <field name="value">http://localhost:5100</field>
+    </record>
+</odoo>

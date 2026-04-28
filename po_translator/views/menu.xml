@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ── Client Action ─────────────────────────────────── -->
+    <!-- Renders the OWL PoTranslatorAction component        -->
+    <record id="action_po_translator_main" model="ir.actions.client">
+        <field name="name">PO Translator</field>
+        <field name="tag">po_translator.main</field>
+        <field name="target">current</field>
+    </record>
+
+    <!-- ── Root menu (shows in App Switcher + top nav) ───── -->
+    <menuitem
+        id="menu_po_translator_root"
+        name="PO Translator"
+        action="action_po_translator_main"
+        sequence="100"
+        web_icon="po_translator,static/description/icon.png"
+    />
+
+</odoo>

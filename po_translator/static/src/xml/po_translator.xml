@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+<t t-name="po_translator.MainAction">
+  <!--
+    Wrapper takes the full available height of Odoo's action area.
+    The iframe fills it entirely so the PO Translator feels native.
+  -->
+  <div class="o_po_translator_action" style="
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      background: #f4f5f7;
+  ">
+
+    <!-- ── Loading state ── -->
+    <t t-if="state.loading">
+      <div style="
+          display: flex; align-items: center; justify-content: center;
+          flex: 1; gap: 12px; color: #5a6072; font-size: 14px;
+          font-family: -apple-system, sans-serif;
+      ">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="#3b5bdb" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round"
+             style="animation: po-spin 0.8s linear infinite;">
+          <path d="M21 12a9 9 0 11-6.219-8.56"/>
+        </svg>
+        Loading PO Translator…
+        <style>
+          @keyframes po-spin { to { transform: rotate(360deg); } }
+        </style>
+      </div>
+    </t>
+
+    <!-- ── Error state ── -->
+    <t t-elif="state.error">
+      <div style="
+          display: flex; flex-direction: column; align-items: center;
+          justify-content: center; flex: 1; gap: 16px; padding: 32px;
+          font-family: -apple-system, sans-serif;
+      ">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
+             stroke="#e74c3c" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <div style="font-size:16px;font-weight:600;color:#2d3436;">
+          PO Translator Unreachable
+        </div>
+        <div style="font-size:13px;color:#636e72;max-width:480px;text-align:center;line-height:1.6;">
+          <t t-esc="state.error"/>
+        </div>
+        <div style="background:#f0f2f5;border:1px solid #dfe6e9;border-radius:8px;
+                    padding:12px 20px;font-size:12px;color:#2d3436;font-family:monospace;">
+          <t t-esc="state.url"/>
+        </div>
+        <div style="font-size:12px;color:#b2bec3;text-align:center;line-height:1.8;">
+          Run <strong>./start.sh</strong> in the PO_Editer project folder,
+          then refresh this page.<br/>
+          To change the URL: Settings → Technical → System Parameters →
+          <em>po_translator.app_url</em>
+        </div>
+      </div>
+    </t>
+
+    <!-- ── Live iframe ── -->
+    <t t-else="">
+      <iframe
+        t-att-src="state.url"
+        t-on-load="onIframeLoad"
+        t-on-error="onIframeError"
+        style="
+          flex: 1;
+          width: 100%;
+          border: none;
+          background: #fff;
+        "
+        allow="clipboard-read; clipboard-write"
+        title="PO Translator"
+      />
+    </t>
+
+  </div>
+</t>
+
+</templates>
